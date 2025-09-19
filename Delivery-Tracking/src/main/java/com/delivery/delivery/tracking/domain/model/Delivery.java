@@ -1,17 +1,18 @@
 package com.delivery.delivery.tracking.domain.model;
 
-import lombok.AccessLevel;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
 @NoArgsConstructor(access = AccessLevel.PACKAGE)
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Setter(AccessLevel.PRIVATE)
+@Getter
 public class Delivery {
 
     @EqualsAndHashCode.Include
@@ -33,17 +34,23 @@ public class Delivery {
 
     private ContactPoint sender;
     private ContactPoint recipient;
+
     private List<Item> items =new ArrayList<>();
 
 
     public static Delivery draft(){
         Delivery delivery = new Delivery();
-        delivery.id = UUID.randomUUID();
-        delivery.status = DeliveryStatus.DRAFT;
-        delivery.totalItems = 0;
-        delivery.totalCost = BigDecimal.ZERO;
-        delivery.courierPayout = BigDecimal.ZERO;
-        delivery.distanceFee = BigDecimal.ZERO;
+        delivery.setId(UUID.randomUUID());
+        delivery.setStatus(DeliveryStatus.DRAFT);
+        delivery.setTotalItems(0);
+        delivery.setTotalCost(BigDecimal.ZERO);
+        delivery.setCourierPayout(BigDecimal.ZERO);
+        delivery.setDistanceFee(BigDecimal.ZERO);
         return delivery;
+    }
+
+    //Esse get serve para que quem fizer o get nao possa alterar a lista de itens
+    public List<Item> getItems() {
+        return Collections.unmodifiableList(this.items);
     }
 }
