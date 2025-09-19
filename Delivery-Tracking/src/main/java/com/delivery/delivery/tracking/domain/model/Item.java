@@ -12,6 +12,8 @@ public class Item {
     @EqualsAndHashCode.Include
     private UUID id;
     private String name;
+
+    @Setter(AccessLevel.PACKAGE)
     private Integer quantity;
 
     static Item brandNew(String name, Integer quantity){
