@@ -44,4 +44,24 @@ public class Courier {
         courier.setFulfillDeliveriesQuantity(0);
         return courier;
     }
+
+    public void assign(UUID deliveryId){
+        this.pendingDeliveries.add(
+                AssignedDelivery.pending(deliveryId)
+        );
+        this.setPendingDeliveriesQuantity(
+                this.getPendingDeliveriesQuantity() +1
+        );
+    }
+
+    public void fulfill(UUID deliveryId){
+        AssignedDelivery delivery = this.pendingDeliveries.stream().filter(
+                d -> d.getId().equals(deliveryId)
+        ).findFirst().orElseThrow();
+        this.pendingDeliveries.remove(delivery);
+
+        this.pendingDeliveriesQuantity--;
+        this.fulfillDeliveriesQuantity++;
+        this.lastFulFilledDeliveryAt = OffsetDateTime.now();
+    }
 }

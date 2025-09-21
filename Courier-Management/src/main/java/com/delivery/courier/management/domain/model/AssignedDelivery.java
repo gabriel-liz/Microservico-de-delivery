@@ -16,7 +16,7 @@ public class AssignedDelivery {
 
     private OffsetDateTime assigedAt;
 
-    private static AssignedDelivery pending(UUID deliveryId){
+    static AssignedDelivery pending(UUID deliveryId){
         AssignedDelivery delivery = new AssignedDelivery();
         delivery.setId(deliveryId);
         delivery.setAssigedAt(OffsetDateTime.now());
