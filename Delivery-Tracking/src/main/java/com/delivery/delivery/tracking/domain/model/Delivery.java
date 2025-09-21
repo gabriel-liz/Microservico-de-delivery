@@ -117,7 +117,7 @@ public class Delivery {
         if(!isFilled()){
             throw new DomainException();
         }
-        if(getStatus().equals(DeliveryStatus.DRAFT)){
+        if(!getStatus().equals(DeliveryStatus.DRAFT)){
             throw new DomainException();
         }
     }
