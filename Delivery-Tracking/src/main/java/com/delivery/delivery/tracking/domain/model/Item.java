@@ -25,11 +25,12 @@ public class Item {
     @Getter(AccessLevel.PRIVATE)
     private Delivery delivery;
 
-    static Item brandNew(String name, Integer quantity){
+    static Item brandNew(String name, Integer quantity, Delivery delivery){
         Item item = new Item();
         item.setId(UUID.randomUUID());
         item.setName(name);
         item.setQuantity(quantity);
+        item.setDelivery(delivery);
         return item;
     }
 }
