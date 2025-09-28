@@ -1,5 +1,6 @@
 package com.delivery.delivery.tracking.api.controller;
 
+import com.delivery.delivery.tracking.api.model.CourierIdInput;
 import com.delivery.delivery.tracking.api.model.DeliveryInput;
 import com.delivery.delivery.tracking.domain.model.Delivery;
 import com.delivery.delivery.tracking.domain.repository.DeliveryRepository;
@@ -49,5 +50,21 @@ public class DeliveryController {
     public Delivery findById(@PathVariable UUID deliveryId){
         return deliveryRepository.findById(deliveryId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+    }
+
+    @PostMapping("/{deliveryId}/placement")
+    public void place(@PathVariable UUID deliveryId) {
+
+    }
+
+    @PostMapping("/{deliveryId}/pickups")
+    public void pickup(@PathVariable UUID deliveryId,
+                       @Valid @RequestBody CourierIdInput input) {
+
+    }
+
+    @PostMapping("/{deliveryId}/completion")
+    public void complete(@PathVariable UUID deliveryId) {
+
     }
 }
