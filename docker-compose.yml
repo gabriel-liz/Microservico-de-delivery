@@ -15,8 +15,8 @@ services:
     depends_on:
       - postgres
     environment:
-      PGADMIN_DEFAULT_EMAIL: dba@algadelivery.com
-      PGADMIN_DEFAULT_PASSWORD: algadelivery
+      PGADMIN_DEFAULT_EMAIL: dba@delivery.com
+      PGADMIN_DEFAULT_PASSWORD: delivery
     ports:
       - 8083:80
     volumes:
@@ -44,7 +44,7 @@ services:
     ports:
       - 8084:8080
     environment:
-      KAFKA_CLUSTERS_0_NAME: algadelivery-kafka-cluster
+      KAFKA_CLUSTERS_0_NAME: delivery-kafka-cluster
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9090
     networks:
       - local-network
