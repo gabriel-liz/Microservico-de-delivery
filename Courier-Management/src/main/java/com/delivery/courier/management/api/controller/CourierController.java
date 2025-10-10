@@ -57,8 +57,4 @@ public class CourierController {
         BigDecimal payoutFee = courierPayoutService.calculate(input.getDistanceInKm());
         return new CourierPayoutResultModel(payoutFee);
     }
-
-
-
-
 }
