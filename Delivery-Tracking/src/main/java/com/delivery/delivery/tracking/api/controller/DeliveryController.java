@@ -45,6 +45,15 @@ public class DeliveryController {
 
     @GetMapping
     public PagedModel<Delivery> findAll(@PageableDefault Pageable pageable) {
+        /* Esse trecho é pra simular o TimeOutPattern, adicionando "problemas" na execucao no metodo
+        int millis = new Random().nextInt(400);
+        Thread.sleep(millis);
+        return new PageModel<>(deliveryRepository.findAll(pageable));
+
+        Precisar adicionar a anotação @SneakyThrows no método
+        *
+        *
+        * */
         return new PagedModel<>(
                 deliveryRepository.findAll(pageable));
     }
