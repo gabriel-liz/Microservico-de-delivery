@@ -45,6 +45,13 @@ public class DeliveryController {
 
     @GetMapping
     public PagedModel<Delivery> findAll(@PageableDefault Pageable pageable) {
+        /*Outra falha forcada para testar o Circuit Breaker da API Gateway
+        * if(Math.random < 0.7){
+        * throw new RunTimeException();
+        * }
+        */
+
+
         /* Esse trecho é pra simular o TimeOutPattern, adicionando "problemas" na execucao no metodo
         int millis = new Random().nextInt(400);
         Thread.sleep(millis);
