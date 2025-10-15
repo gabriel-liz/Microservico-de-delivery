@@ -57,6 +57,18 @@ public class CourierController {
 
     @PostMapping("/payout-calculation")
     public CourierPayoutResultModel calculate(@RequestBody CourierPayoutCalculationInput input) {
+
+        //O código comentado abaixo é parar simular problemas de "latencia" e de alguma possivel falha
+
+        /*
+        * if(Math.random() < 0.3){
+        *   throw new RuntimeException();
+        * }
+        * int millis = new Random().nextInt(250);
+        * Thread.sleep(millis);
+        *
+        *  * */
+
         BigDecimal payoutFee = courierPayoutService.calculate(input.getDistanceInKm());
         return new CourierPayoutResultModel(payoutFee);
     }
