@@ -1,6 +1,6 @@
 # Microservico-de-delivery
 
-Foi desenvolvido um microServiço de delivery onde é criado uma encomenda inicial e após se pode-se submeter a encomenda para processamento, Retirada da encomenda pelo Entregador e por fim Regitrar a conclusao da encomenda(entrega).
+Foi desenvolvido um microServiço de delivery onde é criado uma encomenda inicial e após pode-se submeter a encomenda para processamento, Retirada da encomenda pelo Entregador e por fim Regitrar a conclusao da encomenda(entrega).
 
 
 Para rodar a aplicação é necessario ter o banco de dados Postgres rodando. Para isso temos o arquivo docker-compose.yml no projeto
