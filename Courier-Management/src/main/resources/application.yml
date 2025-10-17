@@ -25,10 +25,10 @@ spring:
           delivery-picked-up-event:com.fasterxml.jackson.databind.JsonNode,
           delivery-fulfilled-event:com.delivery.courier.management.infrastructure.event.DeliveryFulfilledIntegrationEvent
 
-  eureka:
-    client:
-      service-url:
-        default-zone: http://localhost:8761/eureka/
-    instance:
-      instance-id: ${random.value}
-      prefer-ip-address: true
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+    prefer-ip-address: true
