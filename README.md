@@ -1,10 +1,10 @@
 # Microservico-de-delivery
 
-Foi desenvolvido um microServiço de delivery onde é criado uma encomenda inicial e após se deve Submeter a encomenda para processamento, Retirada da encomenda pelo Entregador e por fim Regitrar a conclusao da encomenda(entrega).
+Foi desenvolvido um microServiço de delivery onde é criado uma encomenda inicial e após se pode-se submeter a encomenda para processamento, Retirada da encomenda pelo Entregador e por fim Regitrar a conclusao da encomenda(entrega).
 
 
 Para rodar a aplicação é necessario ter o banco de dados Postgres rodando. Para isso temos o arquivo docker-compose.yml no projeto
-Alem de ter o postgres rodando é necessario criar as tabelas:
+Alem de ter o postgres rodando é necessario criar os bancos:
 
 courierdb, courierdb_test, deliverydb e deliverydb_test
 
